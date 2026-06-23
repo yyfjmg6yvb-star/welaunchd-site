@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How ChatGPT Chooses Which Local Businesses to Recommend | WeLaunchd</title>
+<meta name="description" content="ChatGPT doesn't rank businesses like Google does. It checks five specific things before recommending you. Here's what they are and how to tick every box.">
+<link rel="canonical" href="https://welaunchd.com/articles/chatgpt-chooses-local-business-recommendations.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230D1030'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='62' font-weight='bold' text-anchor='middle' fill='%235B2BFF'%3EW%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How ChatGPT Chooses Which Local Businesses to Recommend">
+<meta property="og:description" content="ChatGPT doesn't rank businesses like Google does. It checks five specific things before recommending you. Here's what they are and how to tick every box.">
+<meta property="og:url" content="https://welaunchd.com/articles/chatgpt-chooses-local-business-recommendations.html">
+<meta property="og:site_name" content="WeLaunchd">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"How ChatGPT Chooses Which Local Businesses to Recommend",
+  "description":"ChatGPT doesn't rank businesses like Google does. It checks five specific things before recommending you. Here's what they are and how to tick every box.",
+  "url":"https://welaunchd.com/articles/chatgpt-chooses-local-business-recommendations.html",
+  "author":{"@type":"Person","name":"Chris","description":"20 years in retail, marketing and building ranked businesses. Founder of WeLaunchd.","url":"https://welaunchd.com"},
+  "publisher":{"@type":"Organization","name":"WeLaunchd","url":"https://welaunchd.com"}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--v:#5B2BFF;--v2:#7C3AED;--coral:#FF5470;--aqua:#00E0C0;--glow:#FFD23E;--ink:#0D1030;--grey:#4a5270;--soft:#9aa0bc;--line:#ece9f8;--mist:#F7F6FF;--white:#fff;--hd:'Plus Jakarta Sans',sans-serif;--bd:'Inter',sans-serif;--sh:0 20px 50px rgba(91,43,255,.12);--sh2:0 6px 20px rgba(13,16,48,.07);--r:16px;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:var(--bd);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;line-height:1.7;}a{text-decoration:none;color:inherit;}.wrap{max-width:1100px;margin:0 auto;padding:0 22px;}.art-wrap{max-width:720px;margin:0 auto;padding:0 22px;}
+h1,h2,h3{font-family:var(--hd);font-weight:800;line-height:1.1;letter-spacing:-.4px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--hd);font-weight:700;font-size:14px;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;transition:transform .14s;white-space:nowrap;text-decoration:none;}.btn:hover{transform:translateY(-2px);}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 8px 20px rgba(255,84,112,.3);}
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:var(--hd);font-weight:800;font-size:20px;color:var(--ink);}.logo .lv{color:var(--v);}
+.nl{display:flex;align-items:center;gap:22px;}.nl a{font-family:var(--hd);font-weight:600;font-size:14px;color:var(--grey);}.nl a:hover{color:var(--v);}
+.burger{display:none;background:none;border:0;font-size:22px;cursor:pointer;color:var(--ink);}
+@media(max-width:820px){.nl{display:none;}.burger{display:block;}}
+.breadcrumb{padding:18px 0 0;font-size:13px;color:var(--soft);}.breadcrumb a{color:var(--soft);}.breadcrumb span{margin:0 6px;}
+.art-header{padding:32px 0 40px;}
+.art-cat-label{font-family:var(--hd);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--v);margin-bottom:12px;}
+.art-header h1{font-size:38px;margin-bottom:16px;line-height:1.1;}
+.art-meta{display:flex;align-items:center;gap:14px;font-size:13px;color:var(--soft);flex-wrap:wrap;}.art-meta .author{font-weight:600;color:var(--grey);}
+.art-body{padding-bottom:60px;}
+.art-body p{font-size:16.5px;color:var(--grey);margin-bottom:22px;line-height:1.74;}
+.art-body h2{font-size:26px;color:var(--ink);margin:42px 0 14px;letter-spacing:-.3px;}
+.art-body h3{font-size:19px;color:var(--ink);margin:28px 0 11px;}
+.art-body ul,.art-body ol{margin:0 0 22px;padding-left:0;list-style:none;}
+.art-body ul li,.art-body ol li{font-size:16px;color:var(--grey);padding:8px 0 8px 26px;border-bottom:1px solid var(--line);position:relative;line-height:1.6;}
+.art-body ul li:last-child,.art-body ol li:last-child{border-bottom:0;}
+.art-body ul li::before{content:"\2713";position:absolute;left:0;color:var(--aqua);font-weight:800;}
+.art-body ol{counter-reset:ol;}.art-body ol li{counter-increment:ol;}.art-body ol li::before{content:counter(ol)".";position:absolute;left:0;color:var(--v);font-weight:800;font-family:var(--hd);}
+.art-body strong{color:var(--ink);font-weight:600;}
+.art-body a{color:var(--v);font-weight:600;}.art-body a:hover{text-decoration:underline;}
+.art-body blockquote{background:var(--mist);border-left:4px solid var(--v);border-radius:0 var(--r) var(--r) 0;padding:18px 22px;margin:26px 0;font-family:var(--hd);font-weight:700;font-size:17px;color:var(--ink);line-height:1.45;}
+.art-body .divider{border:0;border-top:1px solid var(--line);margin:40px 0;}
+.takeaway{background:var(--mist);border:1px solid rgba(91,43,255,.18);border-radius:var(--r);padding:20px 22px;margin:28px 0;}
+.takeaway .tk-label{font-family:var(--hd);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--v);margin-bottom:8px;}
+.takeaway p{font-size:15px;color:var(--ink);margin:0;line-height:1.6;}
+.wl-cta{background:var(--ink);border-radius:20px;padding:32px;margin:44px 0;color:#fff;position:relative;overflow:hidden;}
+.wl-cta::before{content:'';position:absolute;inset:-30%;background:radial-gradient(38% 44% at 82% 15%,rgba(91,43,255,.5),transparent 60%);pointer-events:none;}
+.wl-cta>*{position:relative;}
+.wl-cta .label{font-family:var(--hd);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--glow);margin-bottom:8px;}
+.wl-cta h3{font-size:21px;color:#fff;margin-bottom:8px;}
+.wl-cta p{font-size:14px;color:#e2e4f3;margin-bottom:18px;}
+.wl-cta .price{font-family:var(--hd);font-weight:800;font-size:26px;color:#fff;margin-bottom:16px;}
+.wl-cta .price small{font-size:13px;color:#9aa0bc;font-weight:600;}
+.ai-cta{background:var(--mist);border:1px solid rgba(0,180,216,.25);border-radius:var(--r);padding:22px 24px;margin:32px 0;display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+.ai-cta .ai-text p{font-size:14px;color:var(--grey);margin:0;line-height:1.6;}
+.ai-logo{font-family:var(--hd);font-weight:800;font-size:16px;color:var(--ink);margin-bottom:4px;}.ai-logo span{color:#00B4D8;}
+.related{margin-top:52px;padding-top:36px;border-top:1px solid var(--line);}
+.related h2{font-family:var(--hd);font-weight:800;font-size:19px;margin-bottom:18px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.rel-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--sh2);transition:transform .14s;display:block;}
+.rel-card:hover{transform:translateY(-2px);}
+.rel-cat{font-family:var(--hd);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--v);margin-bottom:6px;}
+.rel-card h3{font-size:15px;font-family:var(--hd);font-weight:700;color:var(--ink);line-height:1.3;}
+@media(max-width:560px){.related-grid{grid-template-columns:1fr;}.art-header h1{font-size:28px;}}
+footer{background:var(--ink);color:#c7c9de;padding:44px 0 22px;margin-top:60px;}
+.fcols{display:flex;gap:32px;flex-wrap:wrap;justify-content:space-between;margin-bottom:28px;}
+footer .logo{font-size:18px;}footer .ft{margin-top:9px;font-size:13px;color:#9aa0bc;max-width:240px;line-height:1.55;}
+.fnav{display:flex;gap:40px;flex-wrap:wrap;}.fnav h4{font-family:var(--hd);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:10px;}.fnav a{display:block;font-size:13px;color:#c7c9de;margin-bottom:7px;}.fnav a:hover{color:#fff;}
+.fbot{border-top:1px solid rgba(255,255,255,.1);padding-top:16px;font-size:12px;color:#7a8098;display:flex;justify-content:space-between;flex-wrap:wrap;gap:7px;}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap"><nav>
+  <a href="/" class="logo">We<span class="lv">Launchd</span></a>
+  <div class="nl" id="nav">
+    <a href="/#why">Why us</a>
+    <a href="/#price">Pricing</a>
+    <a href="/articles/">Articles</a>
+    <a href="https://aisearchschool.com" target="_blank" rel="noopener" style="color:#00B4D8;font-weight:700;">AI Search School ↗</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <a href="https://buy.stripe.com/fZu8wOcmheLuaWx5ltfMA00" class="btn btn-coral" target="_blank" rel="noopener">Start for £99 &rarr;</a>
+    <button class="burger" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+  </div>
+</nav></div>
+</header>
+
+<main><div class="art-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>›</span><a href="/articles/">Articles</a><span>›</span>Getting found on AI
+  </nav>
+
+  <header class="art-header">
+    <div class="art-cat-label">Getting found on AI</div>
+    <h1>How ChatGPT Chooses Which Local Businesses to Recommend</h1>
+    <div class="art-meta">
+      <span class="author">Chris · June 2026</span>
+      <span class="dot">·</span>
+      <span>7 min read</span>
+    </div>
+  </header>
+
+  <article class="art-body">
+    <p>ChatGPT doesn't hand out business recommendations the way Google hands out search results. It's not showing you a list of ten options — it's acting like a mate who knows the area, and it'll recommend two or three businesses it's confident about. To be one of those businesses, you need to pass five checks that ChatGPT runs before it'll put your name in front of a customer. Here's what those checks are and how to make sure you pass them.</p>
+
+    <h2>ChatGPT is a decision assistant, not a search engine</h2>
+
+    <p>This distinction matters more than people realise. When someone types "best plumber in Leeds" into Google, they get a list and they decide. When they ask ChatGPT the same question, ChatGPT decides for them — and gives them two or three names it's already filtered and vouched for.</p>
+
+    <p>That filtering happens based on trust signals. Think of ChatGPT like a letting agent who has to recommend contractors to tenants. They're not going to recommend someone they've never heard of, or someone with one review from 2021, or someone whose phone number is wrong on three different websites. They'll recommend the person they've seen mentioned in multiple reliable places, who has consistent information, and who comes with recent evidence of good work.</p>
+
+    <div class="takeaway">
+      <div class="tk-label">The core principle</div>
+      <p>ChatGPT recommends businesses it can verify across multiple trusted sources. The more places your business appears consistently and credibly, the more likely ChatGPT is to know you exist — and trust you enough to recommend you.</p>
+    </div>
+
+    <h2>The five things ChatGPT checks</h2>
+
+    <h3>1. Your Google Business Profile</h3>
+
+    <p>GBP is the single most important data source ChatGPT uses for local business recommendations. It pulls business name, category, address, phone number, website, reviews, and photos from GBP via integrations with Bing and other index sources. If your GBP is incomplete, outdated, or missing — ChatGPT doesn't have reliable information to recommend you with.</p>
+
+    <p>Specifically: your business category needs to be accurate, your description needs to clearly state what you do and where, and your reviews need to be recent. A handful of glowing 5-star reviews from four years ago carry less weight than a mix of recent reviews over the last 12 months.</p>
+
+    <h3>2. Third-party directory listings (Yelp, Yell, Checkatrade, etc.)</h3>
+
+    <p>ChatGPT cross-references your GBP data against other trusted sources — Yelp, TripAdvisor, Yell, Checkatrade, Angi, Houzz, and sector-specific directories relevant to your industry. If the same business name, address, and phone number appears consistently across these sources, that's a strong trust signal. If they're all slightly different (different phone numbers, old addresses, inconsistent trading names), that's a red flag.</p>
+
+    <p>You don't need to be on every directory. But you do need to be on the major ones, and the information needs to match your GBP exactly.</p>
+
+    <h3>3. A real website with clear, structured content</h3>
+
+    <p>ChatGPT reads your website — or at least, it reads what it can crawl and has in its training data. What it's looking for is clarity: who are you, what do you do, where do you work, and what does working with you involve? A one-page website with three paragraphs and a contact form tells ChatGPT very little. A website with dedicated service pages, a clear location statement, and specific descriptions of what you offer gives ChatGPT the material it needs to confidently recommend you.</p>
+
+    <p>This is exactly what <a href="https://welaunchd.com">WeLaunchd</a> builds — websites structured so AI can read, understand, and recommend you. Not just something that looks nice, but something that works as a trust signal for the tools your future customers are using right now.</p>
+
+    <h3>4. Mentions on other websites (earned credibility)</h3>
+
+    <p>ChatGPT gives more weight to businesses mentioned by other credible websites — local news coverage, industry blogs, supplier directories, business association memberships, local council business listings. These are what SEOs call "backlinks" but for AI they work as trust endorsements: other sources have independently referenced this business, which means it probably exists and is probably legitimate.</p>
+
+    <p>You don't need to be featured in Forbes. A mention in the local paper, a supplier's "approved installer" list, or a spot on a Chamber of Commerce directory all contribute. Build them over time.</p>
+
+    <h3>5. Review recency and volume across platforms</h3>
+
+    <p>Reviews do two things for your AI visibility: they confirm your business is active and trading, and they give ChatGPT language to describe you. A business with 47 Google reviews averaging 4.8 stars, plus reviews on Yelp and Facebook, sends a clear signal. ChatGPT can say "highly rated local plumber with consistent reviews across Google and Yelp" — which is a recommendation worth making.</p>
+
+    <p>Volume matters, but recency matters more. Ten reviews in the last three months beats 80 reviews from 2022. Ask every customer to leave a review. Make it a habit, not a one-off campaign.</p>
+
+    <h2>What you can't do to get recommended by ChatGPT</h2>
+
+    <p>You can't pay for it. There's no sponsored position in ChatGPT's responses. You can't keyword-stuff your way in — ChatGPT isn't reading keyword density, it's reading trustworthiness. And you can't fake it with fake reviews, because the pattern of fake reviews is increasingly obvious to AI systems and is a fast way to undermine the trust signals you're trying to build.</p>
+
+    <blockquote>"ChatGPT recommends businesses it trusts. Trust is built over time, across multiple sources, through real customer evidence. There are no shortcuts — but the businesses that do the groundwork are getting recommended to customers who've already decided they want help."</blockquote>
+
+    <h2>What to do this week</h2>
+
+    <ul>
+      <li>Log into your Google Business Profile and check every field is complete and accurate</li>
+      <li>Search your business name on Yell, Yelp, and Checkatrade — claim or correct your listing on any that are wrong</li>
+      <li>Check that your website clearly states what you do, where you work, and how to contact you</li>
+      <li>Ask your last five happy customers to leave a Google review</li>
+      <li>Look for one local directory, trade association, or supplier list where you can add your business</li>
+    </ul>
+
+    <p>That's it. That's the whole strategy. It's not glamorous, but it's what ChatGPT is actually looking for — and most of your competitors haven't done half of it.</p>
+
+    <div class="takeaway">
+      <div class="tk-label">Bottom line</div>
+      <p>ChatGPT checks five things before recommending a local business: GBP completeness, directory consistency, website clarity, third-party mentions, and review recency. Tick all five and you're in the conversation. Ignore them and you don't exist.</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="wl-cta">
+      <div class="label">Get it done for you</div>
+      <h3>A website that gets you found — built in 24 hours</h3>
+      <p>Everything in this article, applied to your business by Chris. £99 to start — you see it first, pay the balance only when you&rsquo;re happy.</p>
+      <div class="price">&pound;499 <small>+ £19/month &middot; no contract</small></div>
+      <a href="https://buy.stripe.com/fZu8wOcmheLuaWx5ltfMA00" class="btn btn-coral" target="_blank" rel="noopener">Start for £99 &rarr;</a>
+    </div>
+
+    <div class="ai-cta">
+      <div class="ai-text" style="flex:1;min-width:200px;">
+        <div class="ai-logo">AI Search <span>School</span></div>
+        <p><strong>Want to go deeper on AI search visibility?</strong> Free articles and step-by-step guides at AI Search School — from the same desk as WeLaunchd.</p>
+      </div>
+      <a href="https://aisearchschool.com" class="btn" style="background:#00B4D8;color:#fff;" target="_blank" rel="noopener">Visit the School &rarr;</a>
+    </div>
+  </article>
+
+  <aside class="related">
+    <h2>Keep reading</h2>
+    <div class="related-grid">
+      <a class="rel-card" href="why-your-business-is-invisible-to-chatgpt.html">
+        <div class="rel-cat">Getting found on AI</div>
+        <h3>Why your business is invisible to ChatGPT</h3>
+      </a>
+      <a class="rel-card" href="nap-consistency-local-business-ai-visibility.html">
+        <div class="rel-cat">Getting Started</div>
+        <h3>NAP consistency: why inconsistent listings hurt your AI visibility</h3>
+      </a>
+    </div>
+  </aside>
+
+</div></main>
+
+<footer>
+<div class="wrap">
+  <div class="fcols">
+    <div>
+      <a href="/" class="logo">We<span class="lv">Launchd</span></a>
+      <p class="ft">Websites that get found and chosen — for any business, big or small.</p>
+    </div>
+    <div class="fnav">
+      <div>
+        <h4>WeLaunchd</h4>
+        <a href="/#how">How it works</a><a href="/#price">Pricing</a>
+        <a href="/#about">About Chris</a><a href="/articles/">Articles</a>
+      </div>
+      <div>
+        <h4>The School</h4>
+        <a href="https://aisearchschool.com" target="_blank" rel="noopener">AI Search School</a>
+        <a href="https://www.skool.com/ai-search-school-6151/about" target="_blank" rel="noopener">Community</a>
+        <a href="mailto:hello@welaunchd.com">hello@welaunchd.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>&copy; 2026 WeLaunchd. Get found. Get chosen.</span>
+    <span>We make businesses findable — we don&rsquo;t promise specific rankings.</span>
+  </div>
+</div>
+</footer>
+<script>document.querySelector('.burger').addEventListener('click',function(){document.getElementById('nav').classList.toggle('open');});</script>
+</body>
+</html>

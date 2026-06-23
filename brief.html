@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Website Brief — WeLaunchd</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --v:#5B2BFF; --v2:#7C3AED; --coral:#FF5470; --aqua:#00E0C0; --glow:#FFD23E;
+  --ink:#0D1030; --grey:#5a6178; --soft:#9aa0bc; --line:#ece9f8; --mist:#F7F6FF;
+  --hd:'Plus Jakarta Sans',sans-serif; --bd:'Inter',sans-serif;
+  --sh2:0 8px 26px rgba(13,16,48,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--bd);color:var(--ink);background:var(--mist);-webkit-font-smoothing:antialiased;line-height:1.65;}
+a{color:var(--v);}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px;}
+header{background:#fff;border-bottom:1px solid var(--line);padding:18px 0;}
+.logo{font-family:var(--hd);font-weight:800;font-size:22px;color:var(--ink);text-decoration:none;}
+.logo .lv{color:var(--v);}
+.hero{padding:48px 0 8px;}
+.ey{font-family:var(--hd);font-weight:700;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--v);margin-bottom:12px;}
+h1{font-family:var(--hd);font-weight:800;font-size:36px;letter-spacing:-.8px;line-height:1.1;margin-bottom:14px;}
+.lead{font-size:16.5px;color:var(--grey);}
+.lead b{color:var(--ink);}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 28px;margin:26px 0;box-shadow:var(--sh2);}
+.card h2{font-family:var(--hd);font-weight:800;font-size:19px;margin-bottom:4px;}
+.card .sub{font-size:13.5px;color:var(--soft);margin-bottom:20px;}
+label{display:block;font-family:var(--hd);font-weight:700;font-size:14px;margin:18px 0 7px;}
+label small{font-weight:600;color:var(--soft);font-size:12px;}
+label .req{color:var(--coral);}
+input,textarea,select{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:13px 16px;font-family:var(--bd);font-size:15px;color:var(--ink);background:#fff;}
+input:focus,textarea:focus,select:focus{outline:3px solid rgba(91,43,255,.25);border-color:var(--v);}
+textarea{min-height:96px;resize:vertical;}
+.hint{font-size:12.5px;color:var(--soft);margin-top:6px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--hd);font-weight:700;font-size:17px;padding:17px 34px;border-radius:999px;border:0;cursor:pointer;background:var(--coral);color:#fff;box-shadow:0 12px 28px rgba(255,84,112,.34);transition:transform .15s;width:100%;}
+.btn:hover{transform:translateY(-2px);}
+.note{background:rgba(0,224,192,.1);border:1px solid rgba(0,224,192,.4);border-radius:14px;padding:16px 18px;font-size:14px;color:#06605a;margin-top:18px;}
+.foot{padding:34px 0 44px;text-align:center;font-size:12.5px;color:var(--soft);}
+@media(max-width:560px){h1{font-size:29px;}.card{padding:24px 20px;}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="/" class="logo">We<span class="lv">Launchd</span></a></div></header>
+
+<div class="wrap hero">
+  <div class="ey">Your website brief</div>
+  <h1>Ten minutes now. Your site in 24 hours.</h1>
+  <p class="lead">Thanks for your deposit — this is everything I need to build your site. <b>Don&rsquo;t overthink it</b>: short answers are fine, and if you&rsquo;re not sure about anything, write &ldquo;Chris decides&rdquo; and I&rsquo;ll use my judgement. The 24-hour clock starts when this lands in my inbox.</p>
+</div>
+
+<div class="wrap">
+<form action="https://formspree.io/f/xkoadwwk" method="POST">
+
+  <div class="card">
+    <h2>The basics</h2>
+    <div class="sub">Who you are and how customers reach you.</div>
+    <label>Business name <span class="req">*</span></label>
+    <input type="text" name="business_name" required>
+    <label>Your name <span class="req">*</span></label>
+    <input type="text" name="your_name" required>
+    <label>Email <span class="req">*</span></label>
+    <input type="email" name="email" required>
+    <label>Phone number to show on the site</label>
+    <input type="tel" name="phone">
+    <label>Business address <small>(leave blank if you don&rsquo;t want it shown)</small></label>
+    <input type="text" name="address">
+    <label>Opening hours</label>
+    <input type="text" name="hours" placeholder="e.g. Mon–Fri 8–5, Sat 9–1">
+  </div>
+
+  <div class="card">
+    <h2>What you do</h2>
+    <div class="sub">This becomes the heart of your site — plain English is perfect.</div>
+    <label>What does the business do? List your main services <span class="req">*</span></label>
+    <textarea name="services" required placeholder="e.g. Boiler installs, repairs, servicing, landlord certificates..."></textarea>
+    <label>What area do you cover? <span class="req">*</span></label>
+    <input type="text" name="area" required placeholder="e.g. Swindon and 15 miles around">
+    <label>Why do customers choose you? <small>(what makes you different)</small></label>
+    <textarea name="different" placeholder="e.g. 20 years' experience, family-run, same-day callouts, tidy work..."></textarea>
+    <label>Who are your typical customers?</label>
+    <input type="text" name="customers" placeholder="e.g. homeowners, landlords, local businesses">
+  </div>
+
+  <div class="card">
+    <h2>What you&rsquo;ve already got</h2>
+    <div class="sub">Links help me match your world — paste any that exist.</div>
+    <label>Google Business Profile link <small>(search your business on Google Maps and copy the link)</small></label>
+    <input type="url" name="google_profile" placeholder="https://...">
+    <label>Facebook / Instagram links</label>
+    <input type="text" name="socials" placeholder="Paste any social links">
+    <label>Existing website <small>(if you have one)</small></label>
+    <input type="url" name="old_site" placeholder="https://...">
+    <label>Do you already own a domain name?</label>
+    <input type="text" name="domain" placeholder="e.g. yes — joesplumbing.co.uk / no — please sort one">
+  </div>
+
+  <div class="card">
+    <h2>The look</h2>
+    <div class="sub">Optional — &ldquo;Chris decides&rdquo; is a genuinely good answer.</div>
+    <label>Any colours or style you&rsquo;d like?</label>
+    <input type="text" name="style" placeholder="e.g. navy and orange, clean and modern — or Chris decides">
+    <label>Any websites you like the look of?</label>
+    <input type="text" name="inspo" placeholder="Paste links or names">
+    <label>Anything to avoid?</label>
+    <input type="text" name="avoid" placeholder="e.g. no stock photos of men in suits shaking hands">
+  </div>
+
+  <div class="card">
+    <h2>Last bits</h2>
+    <label>Anything else I should know?</label>
+    <textarea name="anything_else" placeholder="Awards, certifications, years trading, anything you want mentioned..."></textarea>
+    <div class="note"><b>Photos &amp; logo:</b> after you hit send, email your logo and any photos (your work, your van, your premises, you) to <a href="mailto:hello@welaunchd.com">hello@welaunchd.com</a>. Phone photos are fine — real beats stock every time. No logo? I&rsquo;ll sort a clean text one.</div>
+    <br>
+    <button type="submit" class="btn">Send my brief &rarr;</button>
+    <div class="hint" style="text-align:center;margin-top:12px;">Goes straight to Chris. The 24-hour build clock starts now. &#9889;</div>
+  </div>
+
+</form>
+</div>
+
+<div class="foot">&copy; 2026 WeLaunchd &middot; <a href="/">welaunchd.com</a> &middot; Get found. Get chosen.</div>
+</body>
+</html>

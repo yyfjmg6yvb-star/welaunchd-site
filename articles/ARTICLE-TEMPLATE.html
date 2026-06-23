@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--
+===========================================
+  WELAUNCHD — ARTICLE TEMPLATE
+===========================================
+
+HOW TO USE:
+1. Copy this file and rename it (e.g. how-to-get-reviews.html)
+2. Find every @@PLACEHOLDER@@ and replace it
+3. Save to the /articles/ folder
+4. Add a card for it in articles/index.html
+
+PLACEHOLDERS:
+@@TITLE@@         — Article title
+@@DESCRIPTION@@   — 1-2 sentence summary, 150-160 chars
+@@CATEGORY@@      — e.g. "Reviews", "AI Search", "Websites", "Google"
+@@AUTHOR-DATE@@   — e.g. "Chris · June 2026"
+@@READ-TIME@@     — e.g. "5 min read"
+@@SLUG@@          — Full URL e.g. https://welaunchd.com/articles/your-slug.html
+@@INTRO@@         — Opening paragraph — the hook
+@@BODY@@          — Main article content (h2, h3, p, ul, ol, blockquote)
+
+TIPS:
+- Answer the main question in paragraph 1 — AI models cite early content
+- Use h2 for main sections, h3 for sub-sections
+- Use numbered lists for steps
+- Add a takeaway box for key points (copy the .takeaway div below)
+- End with the WeLaunchd CTA block — always included
+===========================================
+-->
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@@TITLE@@ | WeLaunchd</title>
+<meta name="description" content="@@DESCRIPTION@@">
+<link rel="canonical" href="@@SLUG@@">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230D1030'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='62' font-weight='bold' text-anchor='middle' fill='%235B2BFF'%3EW%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="@@TITLE@@">
+<meta property="og:description" content="@@DESCRIPTION@@">
+<meta property="og:url" content="@@SLUG@@">
+<meta property="og:site_name" content="WeLaunchd">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"@@TITLE@@",
+  "description":"@@DESCRIPTION@@",
+  "url":"@@SLUG@@",
+  "author":{"@type":"Person","name":"Chris","description":"20 years in retail, marketing and building ranked businesses. Founder of WeLaunchd.","url":"https://welaunchd.com"},
+  "publisher":{"@type":"Organization","name":"WeLaunchd","url":"https://welaunchd.com"}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--v:#5B2BFF;--v2:#7C3AED;--coral:#FF5470;--aqua:#00E0C0;--glow:#FFD23E;--ink:#0D1030;--grey:#4a5270;--soft:#9aa0bc;--line:#ece9f8;--mist:#F7F6FF;--white:#fff;--hd:'Plus Jakarta Sans',sans-serif;--bd:'Inter',sans-serif;--sh:0 20px 50px rgba(91,43,255,.12);--sh2:0 6px 20px rgba(13,16,48,.07);--r:16px;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:var(--bd);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;line-height:1.7;}a{text-decoration:none;color:inherit;}.wrap{max-width:1100px;margin:0 auto;padding:0 22px;}.art-wrap{max-width:720px;margin:0 auto;padding:0 22px;}::selection{background:var(--v);color:#fff;}
+h1,h2,h3{font-family:var(--hd);font-weight:800;line-height:1.1;letter-spacing:-.4px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--hd);font-weight:700;font-size:14px;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;transition:transform .14s;white-space:nowrap;text-decoration:none;}
+.btn:hover{transform:translateY(-2px);}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 8px 20px rgba(255,84,112,.3);}
+.btn-v{background:var(--v);color:#fff;box-shadow:0 8px 20px rgba(91,43,255,.26);}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);}
+.btn-ghost:hover{border-color:var(--v);color:var(--v);}
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:var(--hd);font-weight:800;font-size:20px;color:var(--ink);}.logo .lv{color:var(--v);}
+.nl{display:flex;align-items:center;gap:22px;}.nl a{font-family:var(--hd);font-weight:600;font-size:14px;color:var(--grey);}.nl a:hover{color:var(--v);}
+.burger{display:none;background:none;border:0;font-size:22px;cursor:pointer;color:var(--ink);}
+@media(max-width:820px){.nl{display:none;}.burger{display:block;}.nl.open{display:flex;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;padding:14px 22px;gap:13px;border-bottom:1px solid var(--line);box-shadow:var(--sh2);z-index:60;}}
+.breadcrumb{padding:18px 0 0;font-size:13px;color:var(--soft);}.breadcrumb a{color:var(--soft);}.breadcrumb a:hover{color:var(--v);}.breadcrumb span{margin:0 6px;}
+.art-header{padding:32px 0 40px;}
+.art-cat-label{font-family:var(--hd);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--v);margin-bottom:12px;}
+.art-header h1{font-size:38px;margin-bottom:16px;line-height:1.1;}
+.art-meta{display:flex;align-items:center;gap:14px;font-size:13px;color:var(--soft);flex-wrap:wrap;}.art-meta .author{font-weight:600;color:var(--grey);}.art-meta .dot{color:var(--line);}
+.art-body{padding-bottom:60px;}
+.art-body p{font-size:16.5px;color:var(--grey);margin-bottom:22px;line-height:1.74;}
+.art-body h2{font-size:26px;color:var(--ink);margin:42px 0 14px;letter-spacing:-.3px;}
+.art-body h3{font-size:19px;color:var(--ink);margin:28px 0 11px;}
+.art-body ul,.art-body ol{margin:0 0 22px;padding-left:0;list-style:none;}
+.art-body ul li,.art-body ol li{font-size:16px;color:var(--grey);padding:8px 0 8px 26px;border-bottom:1px solid var(--line);position:relative;line-height:1.6;}
+.art-body ul li:last-child,.art-body ol li:last-child{border-bottom:0;}
+.art-body ul li::before{content:"\2713";position:absolute;left:0;color:var(--aqua);font-weight:800;}
+.art-body ol{counter-reset:ol;}.art-body ol li{counter-increment:ol;}.art-body ol li::before{content:counter(ol)".";position:absolute;left:0;color:var(--v);font-weight:800;font-family:var(--hd);}
+.art-body strong{color:var(--ink);font-weight:600;}
+.art-body a{color:var(--v);font-weight:600;}.art-body a:hover{text-decoration:underline;}
+.art-body blockquote{background:var(--mist);border-left:4px solid var(--v);border-radius:0 var(--r) var(--r) 0;padding:18px 22px;margin:26px 0;font-family:var(--hd);font-weight:700;font-size:17px;color:var(--ink);line-height:1.45;}
+.art-body .divider{border:0;border-top:1px solid var(--line);margin:40px 0;}
+.takeaway{background:var(--mist);border:1px solid rgba(91,43,255,.18);border-radius:var(--r);padding:20px 22px;margin:28px 0;}
+.takeaway .tk-label{font-family:var(--hd);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--v);margin-bottom:8px;}
+.takeaway p{font-size:15px;color:var(--ink);margin:0;line-height:1.6;}
+.wl-cta{background:var(--ink);border-radius:20px;padding:32px;margin:44px 0;color:#fff;position:relative;overflow:hidden;}
+.wl-cta::before{content:'';position:absolute;inset:-30%;background:radial-gradient(38% 44% at 82% 15%,rgba(91,43,255,.5),transparent 60%);pointer-events:none;}
+.wl-cta>*{position:relative;}
+.wl-cta .label{font-family:var(--hd);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--glow);margin-bottom:8px;}
+.wl-cta h3{font-size:21px;color:#fff;margin-bottom:8px;}
+.wl-cta p{font-size:14px;color:#e2e4f3;margin-bottom:18px;}
+.wl-cta .price{font-family:var(--hd);font-weight:800;font-size:26px;color:#fff;margin-bottom:16px;}
+.wl-cta .price small{font-size:13px;color:#9aa0bc;font-weight:600;}
+.ai-cta{background:var(--mist);border:1px solid rgba(0,180,216,.25);border-radius:var(--r);padding:22px 24px;margin:32px 0;display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+.ai-cta .ai-text p{font-size:14px;color:var(--grey);margin:0;line-height:1.6;}.ai-cta .ai-text strong{color:var(--ink);}
+.ai-logo{font-family:var(--hd);font-weight:800;font-size:16px;color:var(--ink);margin-bottom:4px;}.ai-logo span{color:#00B4D8;}
+.related{margin-top:52px;padding-top:36px;border-top:1px solid var(--line);}
+.related h2{font-family:var(--hd);font-weight:800;font-size:19px;margin-bottom:18px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.rel-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--sh2);transition:transform .14s;display:block;}
+.rel-card:hover{transform:translateY(-2px);box-shadow:var(--sh);}
+.rel-cat{font-family:var(--hd);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--v);margin-bottom:6px;}
+.rel-card h3{font-size:15px;font-family:var(--hd);font-weight:700;color:var(--ink);line-height:1.3;}
+@media(max-width:560px){.related-grid{grid-template-columns:1fr;}.art-header h1{font-size:28px;}}
+footer{background:var(--ink);color:#c7c9de;padding:44px 0 22px;margin-top:60px;}
+.fcols{display:flex;gap:32px;flex-wrap:wrap;justify-content:space-between;margin-bottom:28px;}
+footer .logo{font-size:18px;}footer .ft{margin-top:9px;font-size:13px;color:#9aa0bc;max-width:240px;line-height:1.55;}
+.fnav{display:flex;gap:40px;flex-wrap:wrap;}.fnav h4{font-family:var(--hd);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:10px;}.fnav a{display:block;font-size:13px;color:#c7c9de;margin-bottom:7px;}.fnav a:hover{color:#fff;}
+.fbot{border-top:1px solid rgba(255,255,255,.1);padding-top:16px;font-size:12px;color:#7a8098;display:flex;justify-content:space-between;flex-wrap:wrap;gap:7px;}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap"><nav>
+  <a href="/" class="logo">We<span class="lv">Launchd</span></a>
+  <div class="nl" id="nav">
+    <a href="/#why">Why us</a>
+    <a href="/#price">Pricing</a>
+    <a href="/articles/">Articles</a>
+    <a href="https://aisearchschool.com" target="_blank" rel="noopener" style="color:#00B4D8;font-weight:700;">AI Search School ↗</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <a href="https://buy.stripe.com/fZu8wOcmheLuaWx5ltfMA00" class="btn btn-coral" target="_blank" rel="noopener">Start for £99 &rarr;</a>
+    <button class="burger" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+  </div>
+</nav></div>
+</header>
+
+<main>
+<div class="art-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>›</span>
+    <a href="/articles/">Articles</a><span>›</span>
+    @@CATEGORY@@
+  </nav>
+
+  <header class="art-header">
+    <div class="art-cat-label">@@CATEGORY@@</div>
+    <h1>@@TITLE@@</h1>
+    <div class="art-meta">
+      <span class="author">@@AUTHOR-DATE@@</span>
+      <span class="dot">·</span>
+      <span>@@READ-TIME@@</span>
+    </div>
+  </header>
+
+  <article class="art-body">
+
+    <p>@@INTRO@@</p>
+
+    @@BODY@@
+
+    <hr class="divider">
+
+    <!-- WELAUNCHD CTA — always keep this -->
+    <div class="wl-cta">
+      <div class="label">Get it done for you</div>
+      <h3>A website that gets you found — built in 24 hours</h3>
+      <p>Everything in this article, applied to your business by Chris. £99 to start — you see it first, pay the balance only when you&rsquo;re happy.</p>
+      <div class="price">&pound;499 <small>+ £19/month &middot; no contract</small></div>
+      <a href="https://buy.stripe.com/fZu8wOcmheLuaWx5ltfMA00" class="btn btn-coral" target="_blank" rel="noopener">Start for £99 &rarr;</a>
+    </div>
+
+    <!-- AI SEARCH SCHOOL CTA — always keep this -->
+    <div class="ai-cta">
+      <div class="ai-text" style="flex:1;min-width:200px;">
+        <div class="ai-logo">AI Search <span>School</span></div>
+        <p><strong>Want to go deeper on AI search visibility?</strong> Free articles and step-by-step guides at AI Search School — from the same desk as WeLaunchd.</p>
+      </div>
+      <a href="https://aisearchschool.com" class="btn" style="background:#00B4D8;color:#fff;box-shadow:0 8px 20px rgba(0,180,216,.28);" target="_blank" rel="noopener">Visit the School &rarr;</a>
+    </div>
+
+  </article>
+
+  <aside class="related">
+    <h2>Keep reading</h2>
+    <div class="related-grid">
+      <a class="rel-card" href="@@RELATED-1-URL@@">
+        <div class="rel-cat">@@RELATED-1-CAT@@</div>
+        <h3>@@RELATED-1-TITLE@@</h3>
+      </a>
+      <a class="rel-card" href="@@RELATED-2-URL@@">
+        <div class="rel-cat">@@RELATED-2-CAT@@</div>
+        <h3>@@RELATED-2-TITLE@@</h3>
+      </a>
+    </div>
+  </aside>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+  <div class="fcols">
+    <div>
+      <a href="/" class="logo">We<span class="lv">Launchd</span></a>
+      <p class="ft">Websites that get found and chosen — for any business, big or small.</p>
+    </div>
+    <div class="fnav">
+      <div>
+        <h4>WeLaunchd</h4>
+        <a href="/#how">How it works</a>
+        <a href="/#price">Pricing</a>
+        <a href="/#about">About Chris</a>
+        <a href="/articles/">Articles</a>
+      </div>
+      <div>
+        <h4>The School</h4>
+        <a href="https://aisearchschool.com" target="_blank" rel="noopener">AI Search School</a>
+        <a href="https://www.skool.com/ai-search-school-6151/about" target="_blank" rel="noopener">Community</a>
+        <a href="mailto:hello@welaunchd.com">hello@welaunchd.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>&copy; 2026 WeLaunchd. Get found. Get chosen.</span>
+    <span>We make businesses findable — we don&rsquo;t promise specific rankings.</span>
+  </div>
+</div>
+</footer>
+
+<script>
+document.querySelector('.burger').addEventListener('click',function(){
+  document.getElementById('nav').classList.toggle('open');
+});
+</script>
+</body>
+</html>

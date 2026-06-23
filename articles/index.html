@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Articles — WeLaunchd</title>
+<meta name="description" content="Free straight-talking guides on getting your business found on Google and AI. No sign-up needed.">
+<link rel="canonical" href="https://welaunchd.com/articles/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230D1030'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='62' font-weight='bold' text-anchor='middle' fill='%235B2BFF'%3EW%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --v:#5B2BFF;--v2:#7C3AED;--coral:#FF5470;--aqua:#00E0C0;--ink:#0D1030;
+  --grey:#5a6178;--soft:#9aa0bc;--line:#ece9f8;--mist:#F7F6FF;
+  --hd:'Plus Jakarta Sans',sans-serif;--bd:'Inter',sans-serif;
+  --sh:0 4px 16px rgba(13,16,48,.07);--sh2:0 12px 36px rgba(91,43,255,.13);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--bd);color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+/* Header */
+header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:50;}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:var(--hd);font-weight:800;font-size:21px;color:var(--ink);}
+.logo .lv{color:var(--v);}
+.nav-links{display:flex;align-items:center;gap:24px;}
+.nav-links a{font-family:var(--hd);font-weight:600;font-size:14px;color:var(--grey);}
+.nav-links a:hover{color:var(--v);}
+.btn{display:inline-flex;align-items:center;font-family:var(--hd);font-weight:700;font-size:14px;padding:10px 22px;border-radius:999px;border:0;cursor:pointer;transition:transform .14s;}
+.btn:hover{transform:translateY(-1px);}
+.btn-primary{background:var(--coral);color:#fff;}
+.burger{display:none;background:none;border:0;font-size:22px;cursor:pointer;}
+
+/* Hero */
+.hero{background:var(--mist);padding:56px 0 48px;border-bottom:1px solid var(--line);}
+.hero-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.hero-text{}
+.eyebrow{font-family:var(--hd);font-weight:700;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--v);margin-bottom:14px;}
+.hero h1{font-family:var(--hd);font-weight:800;font-size:42px;letter-spacing:-.8px;line-height:1.08;margin-bottom:14px;}
+.hero .lead{font-size:17px;color:var(--grey);line-height:1.65;max-width:520px;}
+.hero-stats{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;}
+.hstat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 20px;text-align:center;}
+.hstat .num{font-family:var(--hd);font-weight:800;font-size:24px;color:var(--v);line-height:1;}
+.hstat .lbl{font-size:12px;color:var(--grey);margin-top:4px;}
+
+/* Category nav */
+.cat-nav{padding:32px 0 0;}
+.cat-label{font-family:var(--hd);font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--soft);margin-bottom:14px;}
+.cat-tabs{display:flex;gap:8px;flex-wrap:wrap;padding-bottom:0;}
+.cat-tab{display:flex;flex-direction:column;gap:4px;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 18px;cursor:pointer;transition:all .16s;text-align:left;}
+.cat-tab:hover{border-color:rgba(91,43,255,.3);background:var(--mist);}
+.cat-tab.active{background:var(--v);border-color:var(--v);color:#fff;}
+.cat-tab .ct-name{font-family:var(--hd);font-weight:700;font-size:14px;color:var(--ink);}
+.cat-tab.active .ct-name{color:#fff;}
+.cat-tab .ct-desc{font-size:12px;color:var(--grey);line-height:1.4;}
+.cat-tab.active .ct-desc{color:rgba(255,255,255,0.75);}
+.cat-tab .ct-count{font-size:11px;font-weight:600;color:var(--soft);margin-top:2px;}
+.cat-tab.active .ct-count{color:rgba(255,255,255,0.6);}
+
+/* Active category description */
+.cat-context{margin:20px 0 0;padding:16px 20px;background:var(--mist);border-left:3px solid var(--v);border-radius:0 10px 10px 0;font-size:15px;color:var(--grey);line-height:1.6;display:none;}
+.cat-context.visible{display:block;}
+
+/* Divider */
+.divider{border:0;border-top:1px solid var(--line);margin:24px 0 32px;}
+
+/* Result count */
+.result-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+.result-count{font-family:var(--hd);font-weight:700;font-size:13px;color:var(--soft);}
+.sort-note{font-size:12px;color:var(--soft);}
+
+/* Article grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;padding-bottom:70px;}
+
+/* Article card */
+.acard{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--sh);transition:transform .16s,box-shadow .16s;display:flex;flex-direction:column;}
+.acard:hover{transform:translateY(-3px);box-shadow:var(--sh2);}
+.acard .bar{height:4px;background:linear-gradient(90deg,var(--v),var(--aqua));}
+.ab{padding:22px;flex:1;display:flex;flex-direction:column;}
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.cat{font-family:var(--hd);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--v);}
+.card-meta{display:flex;align-items:center;gap:8px;}
+.badge-new{background:linear-gradient(90deg,var(--coral),#ff7a45);color:#fff;font-family:var(--hd);font-weight:700;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:100px;}
+.badge-date{font-size:11px;color:var(--soft);}
+.acard h3{font-family:var(--hd);font-weight:800;font-size:17px;margin-bottom:8px;line-height:1.25;flex:1;}
+.acard p{font-size:13.5px;color:var(--grey);margin-bottom:16px;line-height:1.6;}
+.card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;}
+.rl{font-family:var(--hd);font-weight:700;font-size:13px;color:var(--v);}
+.read-time{font-size:12px;color:var(--soft);}
+
+/* CTA banner */
+.cta{background:linear-gradient(135deg,var(--v),var(--v2));border-radius:20px;padding:44px 48px;color:#fff;text-align:center;margin:0 0 70px;}
+.cta h2{font-family:var(--hd);font-weight:800;font-size:28px;margin-bottom:12px;}
+.cta p{color:#ece7ff;max-width:460px;margin:0 auto 22px;font-size:16px;line-height:1.6;}
+.cta .btn{background:#fff;color:var(--v);}
+
+/* Footer */
+footer{background:var(--ink);color:#c7c9de;padding:40px 0 22px;}
+.frow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:20px;}
+footer .logo{color:#fff;}
+footer .logo .lv{color:#FFD23E;}
+.flinks{display:flex;gap:22px;flex-wrap:wrap;}
+.flinks a{font-size:13.5px;color:#c7c9de;}
+.flinks a:hover{color:#fff;}
+.fbot{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:12px;color:#8086a6;}
+
+/* No results */
+.no-results{display:none;text-align:center;padding:60px 20px;color:var(--grey);}
+.no-results.show{display:block;}
+
+@media(max-width:700px){
+  .hero h1{font-size:30px;}
+  .cat-tab .ct-desc{display:none;}
+  .nav-links{display:none;}
+  .burger{display:block;}
+  .hstat{padding:10px 14px;}
+  .hstat .num{font-size:20px;}
+  .cta{padding:30px 22px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="/" class="logo">We<span class="lv">Launchd</span></a>
+      <div class="nav-links">
+        <a href="/articles/">Articles</a>
+        <a href="/#how">How it works</a>
+        <a href="/#price">Pricing</a>
+      </div>
+      <a href="/#price" class="btn btn-primary">Get started</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="eyebrow">Free to read · No sign-up</div>
+        <h1>Learn how to get<br>your business found.</h1>
+        <p class="lead">Straight-talking guides for local business owners on getting visible on Google, AI, and everywhere customers search. Pick your topic and read what applies to you.</p>
+        <div class="hero-stats">
+          <div class="hstat"><div class="num">8</div><div class="lbl">free articles</div></div>
+          <div class="hstat"><div class="num">5</div><div class="lbl">topics covered</div></div>
+          <div class="hstat"><div class="num">0</div><div class="lbl">sign-ups needed</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cat-nav">
+    <div class="cat-label">Browse by topic</div>
+    <div class="cat-tabs">
+      <button class="cat-tab active" data-filter="all" onclick="filterCat('all',this)">
+        <span class="ct-name">All articles</span>
+        <span class="ct-desc">Everything we've published</span>
+        <span class="ct-count">20 articles</span>
+      </button>
+      <button class="cat-tab" data-filter="ai" onclick="filterCat('ai',this)">
+        <span class="ct-name">Getting found on AI</span>
+        <span class="ct-desc">ChatGPT, Google AI & Perplexity</span>
+        <span class="ct-count">8 articles</span>
+      </button>
+      <button class="cat-tab" data-filter="google" onclick="filterCat('google',this)">
+        <span class="ct-name">Google &amp; GBP</span>
+        <span class="ct-desc">Google Business Profile & search</span>
+        <span class="ct-count">5 articles</span>
+      </button>
+      <button class="cat-tab" data-filter="reviews" onclick="filterCat('reviews',this)">
+        <span class="ct-name">Reviews</span>
+        <span class="ct-desc">Getting and using customer reviews</span>
+        <span class="ct-count">3 articles</span>
+      </button>
+      <button class="cat-tab" data-filter="website" onclick="filterCat('website',this)">
+        <span class="ct-name">Your Website</span>
+        <span class="ct-desc">Website fixes that win more customers</span>
+        <span class="ct-count">3 articles</span>
+      </button>
+      <button class="cat-tab" data-filter="start" onclick="filterCat('start',this)">
+        <span class="ct-name">Getting Started</span>
+        <span class="ct-desc">The foundations every business needs</span>
+        <span class="ct-count">2 articles</span>
+      </button>
+    </div>
+    <div class="cat-context" id="cat-context"></div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="result-row">
+    <span class="result-count" id="result-count">Showing all 20 articles</span>
+    <span class="sort-note">Newest first</span>
+  </div>
+
+  <div class="grid" id="grid">
+
+    <!-- ── 23 Jun 2026 ── -->
+    <a class="acard" href="schema-markup-what-it-is-why-your-website-needs-it.html" data-cat="website" data-date="20260623">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Your Website</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">23 Jun 2026</span></div>
+        </div>
+        <h3>What Is Schema Markup — and Why Does Your Website Need It?</h3>
+        <p>The invisible code that tells Google and AI tools exactly what your business does — and why 78% of AI-cited pages have it.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">7 min read</span></div>
+      </div>
+    </a>
+    <a class="acard" href="how-to-add-your-business-to-apple-maps.html" data-cat="ai" data-date="20260623">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Getting found on AI</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">23 Jun 2026</span></div>
+        </div>
+        <h3>How to Add Your Business to Apple Maps — and Why AI Search Needs It</h3>
+        <p>Apple Maps feeds Siri, ChatGPT, and Spotlight search. Here's how to claim your listing and complete it properly in 20 minutes.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">6 min read</span></div>
+      </div>
+    </a>
+    <a class="acard" href="google-posts-for-local-seo-and-ai-search.html" data-cat="google" data-date="20260623">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Google &amp; GBP</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">23 Jun 2026</span></div>
+        </div>
+        <h3>Google Posts: The Free Tool That Gets Your Business Into AI Search Answers</h3>
+        <p>Free, takes 5 minutes, and directly feeds Google AI Overviews. Here's exactly what to post and how often.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">6 min read</span></div>
+      </div>
+    </a>
+
+    <!-- ── 22 Jun 2026 ── -->
+    <a class="acard" href="how-to-get-into-google-local-pack-2026.html" data-cat="google" data-date="20260622">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Google &amp; GBP</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">22 Jun 2026</span></div>
+        </div>
+        <h3>How to Get Into Google's Local Pack in 2026 (5-Step Process)</h3>
+        <p>The Local Pack puts your business above every organic result. Here's exactly how to get in — covering GBP, reviews, website signals, citations, and proximity.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">8 min read</span></div>
+      </div>
+    </a>
+
+    <a class="acard" href="how-to-get-more-google-reviews-local-seo.html" data-cat="reviews" data-date="20260622">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Reviews</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">22 Jun 2026</span></div>
+        </div>
+        <h3>How to Get More Google Reviews (And Why They Affect Your Ranking)</h3>
+        <p>Reviews account for 16–20% of your local ranking weight, and AI tools like ChatGPT use them in 58% of local business recommendations. Here's the system that works.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">9 min read</span></div>
+      </div>
+    </a>
+
+    <a class="acard" href="local-seo-vs-ai-search-2026.html" data-cat="ai" data-date="20260622">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Getting found on AI</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">22 Jun 2026</span></div>
+        </div>
+        <h3>Local SEO vs AI Search in 2026: What's Different and Why You Need Both</h3>
+        <p>Local SEO gets you into Google Maps. AI search gets you cited by ChatGPT and Perplexity. The signals overlap heavily — here's exactly where they differ and what extra work AI requires.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">10 min read</span></div>
+      </div>
+    </a>
+
+    <!-- ── 21 Jun 2026 ── -->
+    <a class="acard" href="google-review-responses-ai-search-2026.html" data-cat="reviews" data-date="20260621">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Reviews</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">21 Jun 2026</span></div>
+        </div>
+        <h3>Why how you respond to Google reviews now affects your AI search visibility</h3>
+        <p>Review responses are indexed, read by AI, and visible to every potential customer. Here's how to write them so they actively help you get found.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">6 min read</span></div>
+      </div>
+    </a>
+
+    <a class="acard" href="chatgpt-chooses-local-business-recommendations.html" data-cat="ai" data-date="20260621">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Getting found on AI</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">21 Jun 2026</span></div>
+        </div>
+        <h3>How ChatGPT chooses which local businesses to recommend</h3>
+        <p>ChatGPT runs five checks before recommending a local business. Here's what they are and exactly how to pass all of them.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">7 min read</span></div>
+      </div>
+    </a>
+
+    <a class="acard" href="google-business-profile-freshness-2026.html" data-cat="google" data-date="20260621">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Google &amp; GBP</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">21 Jun 2026</span></div>
+        </div>
+        <h3>Why your Google Business Profile goes stale after 30 days</h3>
+        <p>Google now drops local visibility for profiles that go 30 days without an update. Here's exactly what to post — and a 10-minute monthly routine to stay ahead.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">6 min read</span></div>
+      </div>
+    </a>
+
+    <!-- ── 20 Jun 2026 ── -->
+    <a class="acard" href="ai-search-visibility-30x-harder-than-google.html" data-cat="ai" data-date="20260620">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Getting found on AI</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">20 Jun 2026</span></div>
+        </div>
+        <h3>AI search visibility is 30x harder than Google — here's what to do about it</h3>
+        <p>New data shows getting found on AI is dramatically harder than traditional search. Here's exactly what the businesses cracking it are doing differently.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">6 min read</span></div>
+      </div>
+    </a>
+
+    <a class="acard" href="schema-markup-local-business-ai-search.html" data-cat="website" data-date="20260620">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Your Website</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">20 Jun 2026</span></div>
+        </div>
+        <h3>Schema markup for local businesses: the 2026 guide to getting found by AI</h3>
+        <p>Schema markup makes your website 2.5x more likely to be cited by AI search. Here's what it is, why it matters, and how to get it set up without technical headaches.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">7 min read</span></div>
+      </div>
+    </a>
+
+    <a class="acard" href="nap-consistency-local-business-ai-visibility.html" data-cat="start" data-date="20260620">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Getting Started</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">20 Jun 2026</span></div>
+        </div>
+        <h3>NAP consistency: why your business name, address and phone number must match everywhere</h3>
+        <p>Inconsistent NAP splits your trust signals and makes AI treat you as multiple different businesses. Here's how to audit and fix yours in an afternoon.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">6 min read</span></div>
+      </div>
+    </a>
+
+    <!-- ── 19 Jun 2026 ── -->
+    <a class="acard" href="google-business-profile-ai-era-2026.html" data-cat="google" data-date="20260619">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Google &amp; GBP</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">19 Jun 2026</span></div>
+        </div>
+        <h3>Google Business Profile in the AI era: your 2026 checklist</h3>
+        <p>Your GBP now feeds AI Overviews, Gemini, and ChatGPT simultaneously. Here's every section you need to optimise — and why it matters more than ever.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">8 min read</span></div>
+      </div>
+    </a>
+
+    <a class="acard" href="chatgpt-recommends-local-business.html" data-cat="ai" data-date="20260619">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Getting found on AI</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">19 Jun 2026</span></div>
+        </div>
+        <h3>Why ChatGPT only recommends 1.2% of local businesses (and how to be one of them)</h3>
+        <p>The exact signals AI looks for before it recommends a business — and why most local businesses fail two of the three without knowing it.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">6 min read</span></div>
+      </div>
+    </a>
+
+    <a class="acard" href="google-ai-overviews-local-search-2026.html" data-cat="ai" data-date="20260619">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Getting found on AI</span>
+          <div class="card-meta"><span class="badge-new">New</span><span class="badge-date">19 Jun 2026</span></div>
+        </div>
+        <h3>How Google AI Overviews are changing local search in 2026</h3>
+        <p>AI Overviews now appear on 48% of searches and get 120% more clicks than standard results. Here's how to get your business cited inside one.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">7 min read</span></div>
+      </div>
+    </a>
+
+    <!-- ── Earlier ── -->
+    <a class="acard" href="why-your-business-is-invisible-to-chatgpt.html" data-cat="ai" data-date="20260601">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Getting found on AI</span>
+          <div class="card-meta"><span class="badge-date">Jun 2026</span></div>
+        </div>
+        <h3>Why your business is invisible to ChatGPT (and how to fix it)</h3>
+        <p>The simple structural reasons AI skips most businesses when customers ask — and the exact changes that get you cited.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">6 min read</span></div>
+      </div>
+    </a>
+
+    <a class="acard" href="google-reviews-ai-visibility.html" data-cat="reviews" data-date="20260601">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Reviews</span>
+          <div class="card-meta"><span class="badge-date">Jun 2026</span></div>
+        </div>
+        <h3>Why Google reviews are now the key to getting found</h3>
+        <p>How recent, specific reviews quietly decide who Google and AI choose to recommend — and how to ask for the kind that actually work.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">5 min read</span></div>
+      </div>
+    </a>
+
+    <a class="acard" href="how-to-set-up-google-business-profile.html" data-cat="google" data-date="20260601">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Google &amp; GBP</span>
+          <div class="card-meta"><span class="badge-date">Jun 2026</span></div>
+        </div>
+        <h3>How to set up your Google Business Profile properly</h3>
+        <p>The one free thing that makes the biggest single difference to getting found locally — and how to do it right the first time.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">7 min read</span></div>
+      </div>
+    </a>
+
+    <a class="acard" href="5-website-mistakes-local-business.html" data-cat="website" data-date="20260601">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Your Website</span>
+          <div class="card-meta"><span class="badge-date">Jun 2026</span></div>
+        </div>
+        <h3>5 things every local business website gets wrong</h3>
+        <p>The common mistakes quietly costing you customers every week — and the quick fixes that make an immediate difference.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">5 min read</span></div>
+      </div>
+    </a>
+
+    <a class="acard" href="build-the-foundation-before-ads.html" data-cat="start" data-date="20260601">
+      <div class="bar"></div>
+      <div class="ab">
+        <div class="card-top">
+          <span class="cat">Getting Started</span>
+          <div class="card-meta"><span class="badge-date">Jun 2026</span></div>
+        </div>
+        <h3>Why most businesses waste money on ads (and what to sort first)</h3>
+        <p>Fix the foundation before you spend a penny on advertising. Here's the order that actually gets results — and what happens when you skip it.</p>
+        <div class="card-footer"><span class="rl">Read article →</span><span class="read-time">5 min read</span></div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="no-results" id="no-results">No articles in this category yet — check back soon.</div>
+
+  <div class="cta">
+    <h2>Want your site built for you?</h2>
+    <p>£499 total — £99 to start. I build it, you approve it, then you pay the balance. £19/month keeps it running forever.</p>
+    <a href="/#price" class="btn">Get started →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <a href="/" class="logo">We<span class="lv">Launchd</span></a>
+      <div class="flinks">
+        <a href="/">Home</a><a href="/articles/">Articles</a>
+        <a href="/#price">Get started</a>
+        <a href="mailto:hello@welaunchd.com">hello@welaunchd.com</a>
+      </div>
+    </div>
+    <div class="fbot">© 2026 WeLaunchd. Get found. Get chosen.</div>
+  </div>
+</footer>
+
+<script>
+const catDescriptions = {
+  all:     '',
+  ai:      'How to get your business recommended by ChatGPT, Perplexity, and Google AI Overviews — the platforms changing how customers find local businesses in 2026.',
+  google:  'Everything about your Google Business Profile and how to make it work harder in the age of AI search — the foundation for getting found locally.',
+  reviews: 'How to get more reviews, what to ask customers to write, and why specific reviews now matter more than ever for AI recommendations.',
+  website: 'The website changes that make the biggest difference to getting found — focused on what local business owners can actually fix themselves.',
+  start:   'New to all this? Start here. The foundation every local business needs before worrying about ads, social media, or anything else.'
+};
+
+const catCounts = {
+  all: 8, ai: 4, google: 2, reviews: 1, website: 1, start: 1
+};
+
+function filterCat(cat, btn) {
+  // Update active tab
+  document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Filter cards
+  const cards = document.querySelectorAll('.acard');
+  let visible = 0;
+  cards.forEach(c => {
+    const show = cat === 'all' || c.dataset.cat === cat;
+    c.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+
+  // Update count
+  const countEl = document.getElementById('result-count');
+  countEl.textContent = cat === 'all'
+    ? 'Showing all ' + visible + ' articles'
+    : 'Showing ' + visible + ' article' + (visible !== 1 ? 's' : '');
+
+  // Show/hide no results
+  document.getElementById('no-results').classList.toggle('show', visible === 0);
+
+  // Show category context
+  const ctx = document.getElementById('cat-context');
+  if (cat !== 'all' && catDescriptions[cat]) {
+    ctx.textContent = catDescriptions[cat];
+    ctx.classList.add('visible');
+  } else {
+    ctx.classList.remove('visible');
+  }
+}
+</script>
+</body>
+</html>

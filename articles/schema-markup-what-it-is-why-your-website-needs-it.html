@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is Schema Markup and Why Does Your Website Need It? | WeLaunchd</title>
+<meta name="description" content="Schema markup tells Google and AI tools exactly what your business does. Without it, they have to guess — and they often get it wrong. Here's how it works.">
+<link rel="canonical" href="https://welaunchd.com/articles/schema-markup-what-it-is-why-your-website-needs-it.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230D1030'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='62' font-weight='bold' text-anchor='middle' fill='%235B2BFF'%3EW%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is Schema Markup and Why Does Your Website Need It?">
+<meta property="og:description" content="Schema markup tells Google and AI tools exactly what your business does. Without it, they have to guess — and they often get it wrong. Here's how it works.">
+<meta property="og:url" content="https://welaunchd.com/articles/schema-markup-what-it-is-why-your-website-needs-it.html">
+<meta property="og:site_name" content="WeLaunchd">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is Schema Markup and Why Does Your Website Need It?",
+  "description": "Schema markup tells Google and AI tools exactly what your business does. Without it, they have to guess — and they often get it wrong.",
+  "url": "https://welaunchd.com/articles/schema-markup-what-it-is-why-your-website-needs-it.html",
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23",
+  "author": {"@type":"Person","name":"Chris","description":"20 years in retail, marketing and building ranked businesses. Founder of WeLaunchd.","url":"https://welaunchd.com"},
+  "publisher": {"@type":"Organization","name":"WeLaunchd","url":"https://welaunchd.com"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is schema markup on a website?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Schema markup is code you add to your website that tells search engines and AI tools exactly what your business is, where it is, what services it offers, and what customers think of it. It uses a standardised vocabulary from schema.org so machines can read the information reliably."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does schema markup help with Google rankings?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Schema markup does not directly boost your ranking position, but it improves how Google understands your site and can unlock rich results — star ratings, FAQs, and business details — in search results. It also significantly increases the chance of appearing in Google AI Overviews."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most important schema type for a local business?",
+      "acceptedAnswer": {"@type": "Answer", "text": "LocalBusiness schema is the most important type for any local service business. It marks up your business name, address, phone number, opening hours, and service area — making all of that information readable by Google and AI tools without them needing to parse your page content."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does my website need schema markup?",
+      "acceptedAnswer": {"@type": "Answer", "text": "If you want your business to appear in Google AI Overviews and AI tools like ChatGPT and Perplexity, schema markup is effectively essential. 78% of pages cited in Google AI Overviews have structured data. Without it, AI tools have to infer information about your business — and they often get it wrong or skip you entirely."}
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--v:#5B2BFF;--v2:#7C3AED;--coral:#FF5470;--aqua:#00E0C0;--glow:#FFD23E;--ink:#0D1030;--grey:#4a5270;--soft:#9aa0bc;--line:#ece9f8;--mist:#F7F6FF;--white:#fff;--hd:'Plus Jakarta Sans',sans-serif;--bd:'Inter',sans-serif;--sh:0 20px 50px rgba(91,43,255,.12);--sh2:0 6px 20px rgba(13,16,48,.07);--r:16px;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:var(--bd);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;line-height:1.7;}a{text-decoration:none;color:inherit;}.wrap{max-width:1100px;margin:0 auto;padding:0 22px;}.art-wrap{max-width:720px;margin:0 auto;padding:0 22px;}
+h1,h2,h3{font-family:var(--hd);font-weight:800;line-height:1.1;letter-spacing:-.4px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--hd);font-weight:700;font-size:14px;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;transition:transform .14s;white-space:nowrap;text-decoration:none;}.btn:hover{transform:translateY(-2px);}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 8px 20px rgba(255,84,112,.3);}
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:var(--hd);font-weight:800;font-size:20px;color:var(--ink);}.logo .lv{color:var(--v);}
+.nl{display:flex;align-items:center;gap:22px;}.nl a{font-family:var(--hd);font-weight:600;font-size:14px;color:var(--grey);}.nl a:hover{color:var(--v);}
+.burger{display:none;background:none;border:0;font-size:22px;cursor:pointer;color:var(--ink);}
+@media(max-width:820px){.nl{display:none;}.burger{display:block;}}
+.breadcrumb{padding:18px 0 0;font-size:13px;color:var(--soft);}.breadcrumb a{color:var(--soft);}.breadcrumb span{margin:0 6px;}
+.art-header{padding:32px 0 40px;}
+.art-cat-label{font-family:var(--hd);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--v);margin-bottom:12px;}
+.art-header h1{font-size:38px;margin-bottom:16px;line-height:1.1;}
+.art-meta{display:flex;align-items:center;gap:14px;font-size:13px;color:var(--soft);flex-wrap:wrap;}.art-meta .author{font-weight:600;color:var(--grey);}
+.art-body{padding-bottom:60px;}
+.art-body p{font-size:16.5px;color:var(--grey);margin-bottom:22px;line-height:1.74;}
+.art-body h2{font-size:26px;color:var(--ink);margin:42px 0 14px;letter-spacing:-.3px;}
+.art-body h3{font-size:19px;color:var(--ink);margin:28px 0 11px;}
+.art-body ul,.art-body ol{margin:0 0 22px;padding-left:0;list-style:none;}
+.art-body ul li,.art-body ol li{font-size:16px;color:var(--grey);padding:8px 0 8px 26px;border-bottom:1px solid var(--line);position:relative;line-height:1.6;}
+.art-body ul li:last-child,.art-body ol li:last-child{border-bottom:0;}
+.art-body ul li::before{content:"\2713";position:absolute;left:0;color:var(--aqua);font-weight:800;}
+.art-body ol{counter-reset:ol;}.art-body ol li{counter-increment:ol;}.art-body ol li::before{content:counter(ol)".";position:absolute;left:0;color:var(--v);font-weight:800;font-family:var(--hd);}
+.art-body strong{color:var(--ink);font-weight:600;}
+.art-body a{color:var(--v);font-weight:600;}.art-body a:hover{text-decoration:underline;}
+.art-body blockquote{background:var(--mist);border-left:4px solid var(--v);border-radius:0 var(--r) var(--r) 0;padding:18px 22px;margin:26px 0;font-family:var(--hd);font-weight:700;font-size:17px;color:var(--ink);line-height:1.45;}
+.art-body .divider{border:0;border-top:1px solid var(--line);margin:40px 0;}
+.takeaway{background:var(--mist);border:1px solid rgba(91,43,255,.18);border-radius:var(--r);padding:20px 22px;margin:28px 0;}
+.takeaway .tk-label{font-family:var(--hd);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--v);margin-bottom:8px;}
+.takeaway p{font-size:15px;color:var(--ink);margin:0;line-height:1.6;}
+.wl-cta{background:var(--ink);border-radius:20px;padding:32px;margin:44px 0;color:#fff;position:relative;overflow:hidden;}
+.wl-cta::before{content:'';position:absolute;inset:-30%;background:radial-gradient(38% 44% at 82% 15%,rgba(91,43,255,.5),transparent 60%);pointer-events:none;}
+.wl-cta>*{position:relative;}
+.wl-cta .label{font-family:var(--hd);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--glow);margin-bottom:8px;}
+.wl-cta h3{font-size:21px;color:#fff;margin-bottom:8px;}
+.wl-cta p{font-size:14px;color:#e2e4f3;margin-bottom:18px;}
+.wl-cta .price{font-family:var(--hd);font-weight:800;font-size:26px;color:#fff;margin-bottom:16px;}
+.wl-cta .price small{font-size:13px;color:#9aa0bc;font-weight:600;}
+.ai-cta{background:var(--mist);border:1px solid rgba(0,180,216,.25);border-radius:var(--r);padding:22px 24px;margin:32px 0;display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+.ai-cta .ai-text p{font-size:14px;color:var(--grey);margin:0;line-height:1.6;}
+.ai-logo{font-family:var(--hd);font-weight:800;font-size:16px;color:var(--ink);margin-bottom:4px;}.ai-logo span{color:#00B4D8;}
+.related{margin-top:52px;padding-top:36px;border-top:1px solid var(--line);}
+.related h2{font-family:var(--hd);font-weight:800;font-size:19px;margin-bottom:18px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.rel-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--sh2);transition:transform .14s;display:block;}
+.rel-card:hover{transform:translateY(-2px);}
+.rel-cat{font-family:var(--hd);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--v);margin-bottom:6px;}
+.rel-card h3{font-size:15px;font-family:var(--hd);font-weight:700;color:var(--ink);line-height:1.3;}
+@media(max-width:560px){.related-grid{grid-template-columns:1fr;}.art-header h1{font-size:28px;}}
+footer{background:var(--ink);color:#c7c9de;padding:44px 0 22px;margin-top:60px;}
+.fcols{display:flex;gap:32px;flex-wrap:wrap;justify-content:space-between;margin-bottom:28px;}
+footer .logo{font-size:18px;}footer .ft{margin-top:9px;font-size:13px;color:#9aa0bc;max-width:240px;line-height:1.55;}
+.fnav{display:flex;gap:40px;flex-wrap:wrap;}.fnav h4{font-family:var(--hd);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:10px;}.fnav a{display:block;font-size:13px;color:#c7c9de;margin-bottom:7px;}.fnav a:hover{color:#fff;}
+.fbot{border-top:1px solid rgba(255,255,255,.1);padding-top:16px;font-size:12px;color:#7a8098;display:flex;justify-content:space-between;flex-wrap:wrap;gap:7px;}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap"><nav>
+  <a href="/" class="logo">We<span class="lv">Launchd</span></a>
+  <div class="nl" id="nav">
+    <a href="/#why">Why us</a>
+    <a href="/#price">Pricing</a>
+    <a href="/articles/">Articles</a>
+    <a href="https://aisearchschool.com" target="_blank" rel="noopener" style="color:#00B4D8;font-weight:700;">AI Search School ↗</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <a href="https://buy.stripe.com/fZu8wOcmheLuaWx5ltfMA00" class="btn btn-coral" target="_blank" rel="noopener">Start for £99 &rarr;</a>
+    <button class="burger" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+  </div>
+</nav></div>
+</header>
+
+<main><div class="art-wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>›</span><a href="/articles/">Articles</a><span>›</span>Your Website
+  </nav>
+
+  <header class="art-header">
+    <div class="art-cat-label">Your Website</div>
+    <h1>What Is Schema Markup — and Why Does Your Website Need It?</h1>
+    <div class="art-meta">
+      <span class="author">Chris · June 2026</span>
+      <span class="dot">·</span>
+      <span>7 min read</span>
+    </div>
+  </header>
+
+  <article class="art-body">
+    <p>Schema markup is code that goes inside your website and tells Google — and AI tools like ChatGPT and Perplexity — exactly what your business is, where it is, and what it does. Without it, search engines and AI have to read your website like a human would, piecing together information from sentences and paragraphs. With it, they can read the data directly, instantly, and without confusion. It's the difference between leaving someone a handwritten note and handing them a properly filled-in form.</p>
+
+    <h2>Why Google and AI tools can't just "read" your website</h2>
+
+    <p>Here's the problem with letting Google figure out your business from your web copy. Say you're a plumber in Sheffield. Your website says "we're a trusted Sheffield plumber covering the S1 to S10 postcodes." That sentence is perfectly clear to a human. To a machine trying to categorise data at massive scale, it's considerably more ambiguous.</p>
+
+    <p>Is "Sheffield" a location or a company name? Is "plumber" a job title or a service category? What does "S1 to S10" mean in terms of actual coordinates? Does this business have opening hours? Can you call them at the weekend?</p>
+
+    <p>Schema markup answers all of these questions directly, in a standardised format that every search engine and AI tool understands. Think of it as attaching a label to everything on your website: "this text = business name," "this = phone number," "this = a question and its answer."</p>
+
+    <blockquote>Schema markup doesn't change what visitors see on your website. It adds invisible labels that only machines read — like a nutrition label on a food packet that customers never look at but the supermarket's stock system depends on.</blockquote>
+
+    <h2>What happens when you add schema markup</h2>
+
+    <p>The improvements are real and measurable. Here's what changes when your website has proper schema:</p>
+
+    <h3>1. Google understands your business more accurately</h3>
+    <p>Google can confidently categorise your business, match you to the right searches, and trust that the information it's serving is correct. An incorrectly parsed business — where Google has guessed wrong about your location or service type — shows up in the wrong searches and gets filtered out of others.</p>
+
+    <h3>2. You're eligible for rich results in search</h3>
+    <p>With the right schema, your search listing can include star ratings, FAQ answers, business hours, and other enhanced details that make your result stand out from plain text listings. These rich results get higher click-through rates — in some studies, up to 30% more clicks than standard listings.</p>
+
+    <h3>3. AI tools cite you more confidently</h3>
+    <p>This is the big one in 2026. When ChatGPT or Perplexity gets asked "who's a good plumber in Sheffield?", they're pulling information from everything they can find about plumbers in Sheffield. Pages with schema markup give AI tools clean, reliable data to cite. Pages without schema make AI tools work harder to extract information — and when it's unclear, they either skip you or get details wrong.</p>
+
+    <p>Research shows that <strong>78% of pages cited in Google AI Overviews have structured data</strong> on them. That's not a coincidence. It's the shortcut AI uses to decide who to cite.</p>
+
+    <div class="takeaway">
+      <div class="tk-label">Key takeaway</div>
+      <p>Schema markup is the main reason some businesses appear in AI search recommendations and others don't — even when the underlying businesses are identical in quality and reputation.</p>
+    </div>
+
+    <h2>The schema types that matter most for local businesses</h2>
+
+    <p>There are hundreds of schema types, but for a local service business, five do the heavy lifting:</p>
+
+    <h3>LocalBusiness schema (homepage)</h3>
+    <p>This is the foundation. It marks up your business name, address, phone number, opening hours, geographic service area, and business category. Everything Google and AI need to know about who you are and where you operate. Add this first — everything else builds on it.</p>
+
+    <h3>FAQPage schema (any Q&amp;A content)</h3>
+    <p>If you have a page or section with questions and answers, wrapping it in FAQPage schema dramatically increases the chance of AI tools extracting and citing those answers directly. Pages with FAQPage schema are cited by Perplexity <strong>47% more often</strong> than equivalent pages without it.</p>
+
+    <h3>AggregateRating schema</h3>
+    <p>This lets you mark up your review score and total review count directly on your website — nested inside your LocalBusiness schema. AI tools can then read your rating without having to fetch it from Google in real time. It's how that star rating sometimes appears in search results next to your business name.</p>
+
+    <h3>Article schema (every article or blog post)</h3>
+    <p>For any written content on your website, Article schema adds a <code>datePublished</code> field and author information. AI tools use this to assess how current and authoritative your content is. Content without a date looks unverifiable — and unverifiable content gets skipped.</p>
+
+    <h3>BreadcrumbList schema (every page)</h3>
+    <p>This tells search engines and AI how your website is structured — which pages belong to which categories, and how they relate to each other. It supports topical authority signals across your whole site.</p>
+
+    <h2>How to actually add schema markup to your website</h2>
+
+    <p>Schema markup is written in JSON-LD — a small block of code that lives in the <code>&lt;head&gt;</code> of your page and is completely invisible to website visitors. Here's the most important one for a local business, simplified:</p>
+
+    <pre style="background:#f4f3ff;border-radius:12px;padding:18px 20px;font-size:13px;line-height:1.65;overflow-x:auto;margin:20px 0;color:#0D1030;"><code>{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Sheffield Plumbing Co.",
+  "telephone": "0114 000 0000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Your Street",
+    "addressLocality": "Sheffield",
+    "postalCode": "S1 2AB",
+    "addressCountry": "GB"
+  },
+  "openingHours": ["Mo-Fr 08:00-18:00", "Sa 09:00-13:00"],
+  "url": "https://yourwebsite.co.uk"
+}</code></pre>
+
+    <p>Paste this into a <code>&lt;script type="application/ld+json"&gt;</code> block in your page's <code>&lt;head&gt;</code> section, fill in your actual details, and you're done. You can verify it worked using Google's free <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">Rich Results Test</a>.</p>
+
+    <h3>Using a WordPress plugin</h3>
+    <p>If your site runs on WordPress, plugins like Rank Math and Yoast SEO can add schema automatically without touching code. Rank Math's local SEO module will walk you through filling in your business details and generates the markup for you. It also handles FAQ schema on individual pages through a dedicated FAQ block.</p>
+
+    <h3>If someone else built your site</h3>
+    <p>Send them a link to this article. If you got your site built through <a href="https://welaunchd.com">WeLaunchd</a>, schema markup is included by default — it goes in at the build stage, not as an afterthought.</p>
+
+    <h2>Common schema mistakes that undermine everything else</h2>
+
+    <ul>
+      <li><strong>Wrong business category.</strong> Using "LocalBusiness" when you should use "PlumbingBusiness" or "RestaurantService" — schema.org has specific sub-types for most trade categories. The more specific, the better.</li>
+      <li><strong>Inconsistent NAP data.</strong> Your name, address, and phone in the schema must match exactly what's on Google Business Profile and everywhere else online. A single difference weakens both.</li>
+      <li><strong>Outdated opening hours.</strong> Schema with incorrect hours actively misleads Google. Update it whenever your hours change, or AI will cite wrong information about you.</li>
+      <li><strong>Adding schema to the wrong pages.</strong> LocalBusiness schema belongs on your homepage (and service pages). FAQPage schema belongs only on pages that actually have FAQ content. Putting schema on irrelevant pages confuses the signal.</li>
+      <li><strong>Not verifying it worked.</strong> Add your page URL to Google's Rich Results Test after implementing. Takes 30 seconds and tells you immediately if there are errors.</li>
+    </ul>
+
+    <h2>How quickly does schema markup make a difference?</h2>
+
+    <p>Google crawls most websites within a few days of changes being made. You can speed this up by submitting your updated URL in Google Search Console. After that, expect:</p>
+    <ul>
+      <li><strong>Rich results eligibility:</strong> within 1-2 weeks of Google re-crawling</li>
+      <li><strong>Improved AI citation:</strong> 4-8 weeks as AI tools update their knowledge of your site</li>
+      <li><strong>Local Pack benefits:</strong> ongoing as the signal compounds with reviews and GBP data</li>
+    </ul>
+
+    <p>Schema markup isn't a magic switch that instantly puts you at the top of everything. It's more like switching from sending Google a rough handwritten sketch of your business to filing a properly completed official document. The difference is clarity — and clarity compounds over time.</p>
+
+    <h2>Frequently asked questions about schema markup</h2>
+
+    <h3>What is schema markup on a website?</h3>
+    <p>Schema markup is code you add to your website that tells search engines and AI tools exactly what your business is, where it is, what services it offers, and what customers think of it. It uses a standardised vocabulary from schema.org so machines can read the information reliably without having to guess from your page text.</p>
+
+    <h3>Does schema markup help with Google rankings?</h3>
+    <p>Schema markup doesn't directly boost your ranking position, but it improves how accurately Google understands your site and unlocks rich results — star ratings, FAQ answers, business details — that appear in search results. It also significantly increases the chance of appearing in Google AI Overviews, where 78% of cited pages have structured data.</p>
+
+    <h3>What is the most important schema type for a local business?</h3>
+    <p>LocalBusiness schema is the most important type for any local service business. It marks up your business name, address, phone number, opening hours, and service area — making all of that information readable by Google and AI tools without them needing to parse your page content.</p>
+
+    <h3>Does my website need schema markup in 2026?</h3>
+    <p>If you want your business to appear in Google AI Overviews and be recommended by AI tools like ChatGPT and Perplexity, schema markup is effectively essential. Without it, AI tools have to infer information about your business — and they often get it wrong or skip you entirely.</p>
+
+    <hr class="divider">
+
+    <div class="wl-cta">
+      <div class="label">Get it done for you</div>
+      <h3>A website that gets you found — built in 24 hours</h3>
+      <p>Schema markup, fast loading, mobile-perfect, and deployed the same day. £99 to start — you see it first, pay the balance only when you&rsquo;re happy.</p>
+      <div class="price">&pound;499 <small>+ £19/month &middot; no contract</small></div>
+      <a href="https://buy.stripe.com/fZu8wOcmheLuaWx5ltfMA00" class="btn btn-coral" target="_blank" rel="noopener">Start for £99 &rarr;</a>
+    </div>
+
+    <div class="ai-cta">
+      <div class="ai-text" style="flex:1;min-width:200px;">
+        <div class="ai-logo">AI Search <span>School</span></div>
+        <p><strong>Want a step-by-step guide to adding every schema type?</strong> AI Search School has free articles and paid guides walking you through the exact code — from the same desk as WeLaunchd.</p>
+      </div>
+      <a href="https://aisearchschool.com" class="btn" style="background:#00B4D8;color:#fff;" target="_blank" rel="noopener">Visit the School &rarr;</a>
+    </div>
+  </article>
+
+  <aside class="related">
+    <h2>Keep reading</h2>
+    <div class="related-grid">
+      <a class="rel-card" href="local-seo-vs-ai-search-2026.html">
+        <div class="rel-cat">AI Search</div>
+        <h3>Local SEO vs AI Search in 2026: What's the Difference?</h3>
+      </a>
+      <a class="rel-card" href="5-website-mistakes-local-business.html">
+        <div class="rel-cat">Your Website</div>
+        <h3>5 things every local business website gets wrong</h3>
+      </a>
+    </div>
+  </aside>
+
+</div></main>
+
+<footer>
+<div class="wrap">
+  <div class="fcols">
+    <div>
+      <a href="/" class="logo">We<span class="lv">Launchd</span></a>
+      <p class="ft">Websites that get found and chosen — for any business, big or small.</p>
+    </div>
+    <div class="fnav">
+      <div>
+        <h4>WeLaunchd</h4>
+        <a href="/#how">How it works</a><a href="/#price">Pricing</a>
+        <a href="/#about">About Chris</a><a href="/articles/">Articles</a>
+      </div>
+      <div>
+        <h4>The School</h4>
+        <a href="https://aisearchschool.com" target="_blank" rel="noopener">AI Search School</a>
+        <a href="https://www.skool.com/ai-search-school-6151/about" target="_blank" rel="noopener">Community</a>
+        <a href="mailto:hello@welaunchd.com">hello@welaunchd.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>&copy; 2026 WeLaunchd. Get found. Get chosen.</span>
+    <span>We make businesses findable — we don&rsquo;t promise specific rankings.</span>
+  </div>
+</div>
+</footer>
+<script>document.querySelector('.burger').addEventListener('click',function(){document.getElementById('nav').classList.toggle('open');});</script>
+</body>
+</html>
